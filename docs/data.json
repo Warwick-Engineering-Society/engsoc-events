@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "name": "Fresher's BBQ",
+            "time": "2021-10-03 13:00:00+01:00",
+            "place": "University of Warwick Science Park, Coventry, CV4 7, United Kingdom",
+            "description": "Event 3"
+        },
+        {
+            "name": "Intro to EngSoc",
+            "time": "2021-09-29 18:00:00+01:00",
+            "place": "Warwick School of Engineering",
+            "description": "Event 1"
+        }
+    ]
+}
