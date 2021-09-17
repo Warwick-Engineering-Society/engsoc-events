@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engsoc Events</title>
+  </head>
+  <body>
+    <h1>A simple page to show the events.</h1>
+    <div id="data"></div>
+  </body>
+</html>
+<script>
+  var myHeaders = new Headers();
+  myHeaders.append("pragma", "no-cache");
+  myHeaders.append("cache-control", "no-cache");
+  var myInit = {
+    method: "GET",
+    headers: myHeaders,
+  };
+
+  const div = document.getElementById("data");
+  fetch("/data.json", myInit)
+    .then((response) => response.json())
+    .then((data) => {
+      data.data.forEach((event) => {
+        const eventDiv = document.createElement("div");
+        eventDiv.innerHTML = `<h2>${event.name}</h2>
+        <p>${event.time}</p>
+        <p>${event.place}</p>
+        <p>${event.description}</p>`;
+        div.appendChild(eventDiv);
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+</script>
