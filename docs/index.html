@@ -21,7 +21,7 @@
   };
 
   const div = document.getElementById("data");
-  fetch("/data.json", myInit)
+  fetch("./data.json", myInit)
     .then((response) => response.json())
     .then((data) => {
       data.data.forEach((event) => {
