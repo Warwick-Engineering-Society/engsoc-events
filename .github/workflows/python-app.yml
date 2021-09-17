@@ -36,7 +36,7 @@ jobs:
       run: |
         python main.py
       env:
-        TOKEN: ${{ env.TOKEN }} # from github secrets
+        TOKEN: ${{ secrets.TOKEN }} # from github secrets
     - name: Commit changes
       uses: EndBug/add-and-commit@v7
       with:
