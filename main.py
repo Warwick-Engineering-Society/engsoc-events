@@ -29,10 +29,8 @@ except KeyError: # no more pages
     pass
 
 print("\n\n")
-# remember to save data
-# with open('docs/data.json', 'w') as outfile:
-#     json.dump(response, outfile)
 
+events = []
 for event in data:
     name = event.get("name", "")
     time = dateutil.parser.isoparse(event.get("start_time", ""))
@@ -47,3 +45,11 @@ for event in data:
         print(f"{time}")
         print(f"{description}")
         print("=======================================\n\n")
+
+        events.append({"name": name, "time": str(time), "place": place, "description": description})
+
+print(events)
+events = {"data": events}
+
+with open('docs/data.json', 'w') as outfile:
+    json.dump(events, outfile, indent=4)
