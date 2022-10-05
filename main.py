@@ -9,10 +9,11 @@ load_dotenv()  # take environment variables from .env.
 requests_cache.install_cache(cache_name='.cache', backend='filesystem', expire_after=18000)
 
 PAGE_ID = "1444572979139258"
+PAGE_ID_NEW = "100063650976792"
 GROUP_ID = "1034540623827386"
 BASE = "https://graph.facebook.com/v12.0"
 
-url = f"{BASE}/{GROUP_ID}/events"
+url = f"{BASE}/{PAGE_ID_NEW}/events"
 params = (
     ('access_token', os.environ.get("TOKEN")),
 )
